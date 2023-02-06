@@ -10,7 +10,7 @@ storage = MemoryStorage()
 
 
 dp = Dispatcher(bot, storage=storage)
-
+    
 
 @dp.register_message_handler
 async def gpt_bot(message: types.Message):
