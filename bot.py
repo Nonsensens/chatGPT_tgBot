@@ -2,19 +2,19 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from aiogram import Bot, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from gpt import askGPT
+from gpt import ask_gpt
 
 
-bot = Bot(token='5789988431:AAHxw4AsAX5o_td7UaVKSkSm6kYi8wMBU4U')
+bot = Bot(token='{GITHUB_TOKEN_TG}')
 storage = MemoryStorage()
 
 
 dp = Dispatcher(bot, storage=storage)
-    
+
 
 @dp.register_message_handler
 async def gpt_bot(message: types.Message):
-    await message.answer(askGPT(message.text))
+    await message.answer(ask_gpt(message.text))
 
 if __name__ == '__main__':
 

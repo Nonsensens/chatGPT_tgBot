@@ -1,8 +1,8 @@
 import openai
 
 
-def askGPT(text):
-    openai.api_key = "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"
+def ask_gpt(text):
+    openai.api_key = "{GITHUB_TOKEN_GPT}"
     response = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = text,
@@ -16,7 +16,7 @@ def main():
     while True:
         print('GPT: Ask me a question\n')
         myQn = input()
-        askGPT(myQn)
+        ask_gpt(myQn)
         print('\n')
 
 
